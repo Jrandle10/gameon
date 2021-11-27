@@ -12,7 +12,7 @@ class Game:
 games = [
   Game('God Of War', 'Playstation', 'Kranos takes down all the gods', '2005'),
   Game('Madden 21', 'Xbox', 'NFL game', '2020'),
-  Game('Fifa 21', 'Playstation', 'Soccer game', '2020'),
+  Game('Fifa 21', 'Playstation', 'MLB soccer game', '2020'),
 ]
 
 def home(request):
