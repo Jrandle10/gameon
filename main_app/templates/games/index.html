@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/game-index.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+<h1>Game List</h1>
+<img src="{% static 'images/' %}" alt="" />
+<img src="{% static 'images/' %}" alt="" />
+<img src="{% static 'images/' %}" alt="" />
+<img src="{% static 'images/' %}" alt="" />
+</section>
+
+<section class="card-container">
+  {% for game in games %}
+    <div class="card">
+      <div class="card-content">
+        <div class="card-img-container">
+          <img 
+            src="{% static 'images/' %}" 
+            alt=""
+          >
+        </div>
+        <h2 class="card-title">{{ game.name }}</h2>
+        {% if game.platform %}
+          <p>This is a {{ game.platform }} game</p>
+        {% endif %}
+        <p><small>{{ game.description }}</small></p>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
