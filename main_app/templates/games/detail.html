@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/game-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="game-container">
+  <div class="game-img">
+    <img 
+      src="{% static 'images/220px-God_of_War_4_cover.png' %}" 
+      alt="game cover"
+    >
+  </div>
+  <div class="game-details">
+    <h1>{{ game.name }}</h1>
+    {% if game.platform %}
+      <h2>This is a {{ game.platform }} game!</h2>
+    {% endif %}
+    <p>{{ game.description }}</p>
+  </div>
+</section>
+
+{% endblock %}
