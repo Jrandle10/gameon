@@ -21,3 +21,4 @@ def games_detail(request, game_id):
 class GameCreate(CreateView):
   model = Game
   fields = '__all__'
+  success_url = '/games/'
