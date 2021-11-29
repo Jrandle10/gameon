@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('pl8auq@cz+4gz*z-*yix=w2x$c3dvl%2brfopvia(wp)say5&+')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG') == 'True'
 
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
