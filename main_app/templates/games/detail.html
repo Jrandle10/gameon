@@ -24,6 +24,10 @@
       <h2>This is a {{ game.platform }} game!</h2>
     {% endif %}
     <p>{{ game.description }}</p>
+    <div class="game-actions">
+      <a href="{% url 'games_update' game.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'games_delete' game.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
 </section>
 
