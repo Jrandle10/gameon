@@ -13,10 +13,18 @@
 
 <section class="game-container">
   <div class="game-img">
-    <img 
-      src="{% static 'images/220px-God_of_War_4_cover.png' %}" 
-      alt="game cover"
-    >
+    {% if game.photo.url %}
+      <img 
+        src="{{ game.photo.url }}" 
+        alt="A photo of {{ game.name }}"
+        class="usr-img"
+      >
+    {% else %}
+      <img 
+        src="{% static 'images/220px-God_of_War_4_cover.png' %}" 
+        alt="game cover"
+      >
+    {% endif %}
   </div>
   <div class="game-details">
     <h1>{{ game.name }}</h1>
@@ -28,6 +36,20 @@
       <a href="{% url 'games_update' game.id %}" class="btn warn">Edit</a>
       <a href="{% url 'games_delete' game.id %}" class="btn danger">Delete</a>
     </div>
+    <h3>Change {{ game.name }}'s photo</h3>
+    <p id="file-name"></p>
+    <form 
+      action="{% url 'add_photo' game.id %}"
+      enctype="multipart/form-data"
+      method="POST"
+    >
+      {% csrf_token %}
+      <label class="btn secondary">
+        Choose photo
+        <input type="file" name="photo-file" id="file-input">
+      </label>
+      <button type="submit" class="btn submit">Upload Photo</button>
+    </form>
   </div>
 </section>
 
