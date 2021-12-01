@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
   --nav-bg: rgba(104, 197, 248, .7);
   --nav-bg-ff: rgba(83, 221, 62, 0.9);
-  --borders: rgb(36, 116, 248) solid 2px;
+  --borders: rgb(242, 23, 23) solid 2px;
   --text-color: rgb(17, 20, 17);
   --link-hover-color: rgb(16, 56, 158);
   --button-bg: rgb(245, 245, 245);
@@ -164,6 +164,7 @@ nav li {
     flex-direction: row;
     top: 0;
     align-items: center;
+    background-color: var(--nav-bg-ff);
   }
 
   main {
@@ -230,6 +231,7 @@ nav li {
     top: 20px;
     background-color: transparent;
     border-bottom: none;
+    background-color: var(--nav-bg-ff);
   }
 
   nav,

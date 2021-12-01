@@ -21,7 +21,7 @@
       >
     {% else %}
       <img 
-        src="{% static 'images/220px-God_of_War_4_cover.png' %}" 
+        src="{% static 'images/trio.png' %}" 
         alt="game cover"
       >
     {% endif %}
@@ -29,7 +29,7 @@
   <div class="game-details">
     <h1>{{ game.name }}</h1>
     {% if game.platform %}
-      <h2>This is a {{ game.platform }} game!</h2>
+      <h2>This game is on {{ game.platform }}!</h2>
     {% endif %}
     <p>{{ game.description }}</p>
     <div class="game-actions">
