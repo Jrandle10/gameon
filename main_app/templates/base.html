@@ -20,18 +20,16 @@
   <header>
     <div class="header-logo-container">
       <a href="/">
-       <h1>Game On!</h1> 
+      <h1>Game On!</h1> 
       </a>
     </div>
     <nav>
       <ul>
         {% if user.is_authenticated %}      
-          <li><a href="{% url 'games_index' %}">Your Colection</a></li>
+          <li><a href="{% url 'games_index' %}">Your Collection</a></li>
           <li><a href="{% url 'games_create' %}">Add a game</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'logout' %}">Log out</a></li>
         {% else %}
-          <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'home' %}">Login</a></li>
           <li><a href="{% url 'signup' %}">Sign Up</a></li>
         {% endif %}
